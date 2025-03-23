@@ -13,9 +13,10 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    overflow: hidden;
+    min-height: 100vh;
+    overflow-x: hidden;
     position: relative;
+    perspective: 1000px;
 }
 
 .container {
@@ -25,6 +26,8 @@ body {
     text-align: center;
     box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.4);
     backdrop-filter: blur(10px);
+    max-width: 90%;
+    width: 600px;
     transition: transform 0.3s ease-in-out;
 }
 
@@ -39,81 +42,33 @@ body {
     opacity: 0.9;
 }
 
-/* Features */
-.features {
-    list-style: none;
-    text-align: left;
-    font-size: 16px;
+/* Buttons react to cursor */
+button {
+    position: relative;
+    transition: transform 0.2s ease-out;
 }
 
-.features li {
-    padding: 5px 0;
-    display: flex;
-    align-items: center;
+button:hover {
+    transform: scale(1.1);
 }
 
-.features li::before {
-    content: "✔";
-    margin-right: 8px;
-    color: #00ff99;
-    font-weight: bold;
+/* Background follows cursor */
+body::before {
+    content: "";
+    position: absolute;
+    width: 150%;
+    height: 150%;
+    background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+    transform: translate(-50%, -50%);
+    pointer-events: none;
 }
 
-/* Steps */
-.steps {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-}
-
-.step {
-    width: 45%;
-    padding: 12px;
-    margin: 5px;
-    background: rgba(0, 0, 0, 0.2);
-    border-radius: 8px;
-    transition: transform 0.3s ease-in-out;
-}
-
-.step:hover {
-    transform: scale(1.05);
-    background: rgba(0, 0, 0, 0.4);
-}
-
-.password-checker {
-    margin-top: 20px;
-}
-
+/* Password Strength */
 #passwordStrengthBar {
     height: 10px;
     width: 100%;
     background: #ccc;
     border-radius: 5px;
-}
-
-.learn-more {
-    margin-top: 20px;
-    padding: 12px 18px;
-    font-size: 16px;
-    font-weight: bold;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    background: linear-gradient(135deg, #00c6ff, #0072ff);
-    color: white;
-    transition: 0.3s ease-in-out;
-}
-
-.learn-more:hover {
-    background: linear-gradient(135deg, #0072ff, #00c6ff);
-    transform: translateY(-3px);
-}
-
-/* Animations */
-.fade-in {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
 }
 
 .pulse {
