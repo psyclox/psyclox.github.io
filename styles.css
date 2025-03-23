@@ -8,7 +8,7 @@
 }
 
 body {
-    background: radial-gradient(circle, #141e30, #243b55);
+    background: linear-gradient(135deg, #141e30, #243b55);
     color: white;
     display: flex;
     justify-content: center;
@@ -20,16 +20,12 @@ body {
 
 .container {
     background: rgba(255, 255, 255, 0.1);
-    padding: 30px;
-    border-radius: 15px;
+    padding: 25px;
+    border-radius: 12px;
     text-align: center;
-    box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.4);
     backdrop-filter: blur(10px);
     transition: transform 0.3s ease-in-out;
-}
-
-.container:hover {
-    transform: scale(1.02);
 }
 
 .title {
@@ -44,47 +40,56 @@ body {
     opacity: 0.9;
 }
 
-.content {
-    font-size: 16px;
+/* Features & Methodology */
+.features {
+    list-style: none;
     text-align: left;
     margin-top: 10px;
-    line-height: 1.6;
-    animation: slideIn 1s ease-in-out;
-}
-
-.methodology {
-    margin-top: 20px;
-    padding: 15px;
-    border-radius: 10px;
-    background: rgba(0, 0, 0, 0.3);
-}
-
-.methodology h2 {
-    font-size: 20px;
-    margin-bottom: 10px;
-}
-
-.methodology ul {
-    list-style-type: none;
-    text-align: left;
-}
-
-.methodology li {
-    padding: 8px 0;
-    display: flex;
-    align-items: center;
     font-size: 16px;
 }
 
-.methodology li::before {
+.features li {
+    padding: 5px 0;
+    display: flex;
+    align-items: center;
+}
+
+.features li::before {
     content: "✔";
-    margin-right: 10px;
+    margin-right: 8px;
     color: #00ff99;
+    font-weight: bold;
+}
+
+/* Steps */
+.steps {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.step {
+    width: 45%;
+    padding: 12px;
+    margin: 5px;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.step:hover {
+    transform: scale(1.05);
+    background: rgba(0, 0, 0, 0.4);
+}
+
+.dev-info {
+    margin-top: 20px;
+    font-size: 16px;
 }
 
 .learn-more {
     margin-top: 20px;
-    padding: 12px 20px;
+    padding: 12px 18px;
     font-size: 16px;
     font-weight: bold;
     border: none;
@@ -100,25 +105,20 @@ body {
     transform: translateY(-3px);
 }
 
+/* Cursor Effect */
+.cursor-effect {
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    background: white;
+    border-radius: 50%;
+    pointer-events: none;
+    mix-blend-mode: difference;
+    transition: transform 0.1s ease-out;
+}
+
 /* Animations */
 @keyframes fadeIn {
     from { opacity: 0; transform: translateY(-20px); }
     to { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes slideIn {
-    from { opacity: 0; transform: translateX(-30px); }
-    to { opacity: 1; transform: translateX(0); }
-}
-
-/* Mouse-following animation */
-body::before {
-    content: "";
-    position: absolute;
-    width: 150px;
-    height: 150px;
-    background: rgba(255, 255, 255, 0.2);
-    border-radius: 50%;
-    pointer-events: none;
-    transition: transform 0.1s ease-out;
 }
