@@ -14,37 +14,68 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    overflow-x: hidden;
-    position: relative;
-    perspective: 1000px;
+    overflow: hidden;
 }
 
+/* 📌 Responsive container */
 .container {
     background: rgba(255, 255, 255, 0.1);
-    padding: 25px;
+    padding: 40px;
     border-radius: 12px;
     text-align: center;
     box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.4);
     backdrop-filter: blur(10px);
-    max-width: 90%;
-    width: 600px;
-    transition: transform 0.3s ease-in-out;
+    width: min(90%, 600px);
 }
 
+/* 📌 Title */
 .title {
-    font-size: 36px;
+    font-size: 40px;
     font-weight: bold;
+    margin-bottom: 10px;
 }
 
-.subheading {
+/* 📌 Proper spacing & alignment */
+.content {
+    text-align: left;
+    margin-top: 20px;
+}
+
+.content h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.features {
+    list-style: none;
+    padding-left: 20px;
+}
+
+.features li {
     font-size: 18px;
-    margin-bottom: 15px;
-    opacity: 0.9;
+    margin-bottom: 8px;
 }
 
-/* Buttons react to cursor */
+/* 📌 Password Strength Bar */
+#passwordStrengthBar {
+    height: 10px;
+    width: 100%;
+    background: #ccc;
+    border-radius: 5px;
+    transition: background 0.3s ease-in-out;
+    margin-top: 10px;
+}
+
+/* 📌 Button Hover Effect */
 button {
-    position: relative;
+    background: #3498db;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 20px;
     transition: transform 0.2s ease-out;
 }
 
@@ -52,31 +83,37 @@ button:hover {
     transform: scale(1.1);
 }
 
-/* Background follows cursor */
-body::before {
-    content: "";
-    position: absolute;
-    width: 150%;
-    height: 150%;
-    background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
-    transform: translate(-50%, -50%);
+/* 📌 Cursor Effect */
+.cursor-effect {
+    position: fixed;
+    width: 100px;
+    height: 100px;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.2) 0%, transparent 80%);
+    border-radius: 50%;
     pointer-events: none;
+    transform: translate(-50%, -50%);
+    transition: transform 0.1s ease-out;
 }
 
-/* Password Strength */
-#passwordStrengthBar {
-    height: 10px;
+/* 📌 Background Blobs (Blurred Elements) */
+.background-blobs {
+    position: absolute;
     width: 100%;
-    background: #ccc;
-    border-radius: 5px;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1;
 }
 
-.pulse {
-    animation: pulse 1.5s infinite;
+.blob {
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    background: rgba(255, 255, 255, 0.15);
+    filter: blur(30px);
+    border-radius: 50%;
+    transition: transform 0.2s ease-out;
 }
 
-@keyframes pulse {
-    0% { transform: scale(1); }
-    50% { transform: scale(1.05); }
-    100% { transform: scale(1); }
-}
+.blob1 { top: 10%; left: 10%; }
+.blob2 { top: 50%; left: 80%; }
+.blob3 { bottom: 10%; right: 20%; }
