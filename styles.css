@@ -1,0 +1,146 @@
+/* Global Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #03357c, #920fc5b7, #032d7c9e);
+    color: #fff;
+    text-align: center;
+    overflow-x: hidden;
+}
+
+/* Navbar */
+nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 40px;
+    background: rgba(0, 0, 0, 0.8);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+nav h1 {
+    margin: 0;
+}
+
+nav button {
+    background: #f39c12;
+    border: none;
+    padding: 8px 15px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: 0.3s ease-in-out;
+}
+
+nav button:hover {
+    background: #d35400;
+    transform: scale(1.1);
+}
+
+/* Hero Section */
+.hero {
+    background: url('https://source.unsplash.com/1600x900/?technology,security') center/cover no-repeat;
+    height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 10;
+}
+
+.hero-content h2 {
+    font-size: 36px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.hero:hover .hero-content {
+    transform: translateY(-10px);
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 12px 25px;
+    margin-top: 15px;
+    background: #e67e22;
+    color: white;
+    font-weight: bold;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: 0.3s ease-in-out;
+}
+
+.cta-button:hover {
+    background: #d35400;
+    transform: scale(1.1);
+}
+
+/* Sections */
+section {
+    padding: 50px 20px;
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Grid Layout */
+.grid {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.card {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    width: 280px;
+    border-radius: 8px;
+    transition: 0.3s ease-in-out;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.card:hover {
+    transform: translateY(-10px) scale(1.05);
+    box-shadow: 0 8px 20px rgba(255, 255, 255, 0.3);
+}
+
+/* Steps */
+.steps {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.step {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+    width: 250px;
+    margin: 10px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.step:hover {
+    transform: rotate(-3deg) scale(1.05);
+}
+
+/* Footer */
+footer {
+    background: rgba(0, 0, 0, 0.8);
+    padding: 15px;
+    margin-top: 30px;
+}
+
+/* Dark Mode */
+.dark-mode {
+    background: #111;
+    color: #ddd;
+}
+
+.dark-mode .card {
+    background: rgba(255, 255, 255, 0.2);
+}
