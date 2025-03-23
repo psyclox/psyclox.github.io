@@ -3,107 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cloud Crypt - A Secure Encryption Project</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <title>Cloud Crypt - Secure File Encryption</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <div class="container">
+        <h1 class="title">🔐 Cloud Crypt</h1>
+        <p class="subheading">Advanced File Encryption & Security</p>
 
-    <!-- Navigation Bar -->
-    <nav>
-        <h1>🔐 Cloud Crypt</h1>
-        <button id="darkModeToggle">🌙 Dark Mode</button>
-    </nav>
-
-    <!-- Hero Section -->
-    <header class="hero">
-        <div class="hero-content">
-            <h2>Secure Your Files with Cloud Crypt</h2>
-            <p>An advanced encryption project by university students to enhance cloud security.</p>
-            <a href="#about" class="cta-button">Learn More</a>
+        <div class="content">
+            <p><b>Developed by:</b> Karthikeyan N, Mohamed Hashif H, Santosh M</p>
+            <p><b>Purpose:</b> Cloud Crypt is an encryption tool that protects your files before uploading them to cloud storage. Using AES-256 encryption, it ensures your data remains safe even in case of a cloud breach.</p>
         </div>
-    </header>
 
-    <!-- About Section -->
-    <section id="about">
-        <h2>🌟 About Cloud Crypt</h2>
-        <div class="content-box">
-            <p>
-                Cloud Crypt is an innovative project designed by university students to provide an extra layer of **security and privacy** when storing files in cloud platforms like Google Drive. 
-                This project ensures **end-to-end encryption** using AES-256, making it impossible for unauthorized access.
-            </p>
+        <div class="methodology">
+            <h2>🔍 How It Works</h2>
+            <ul>
+                <li>✨ Select a file for encryption</li>
+                <li>🔑 Enter a secure password</li>
+                <li>🔐 File is encrypted before cloud upload</li>
+                <li>☁️ Upload securely to Google Drive</li>
+                <li>🔓 Download and decrypt anytime</li>
+            </ul>
         </div>
-    </section>
 
-    <!-- Needs Section -->
-    <section id="needs">
-        <h2>📌 Why Cloud Crypt?</h2>
-        <div class="grid">
-            <div class="card">
-                <h3>🔑 Data Security</h3>
-                <p>Cloud storage is vulnerable to breaches. Cloud Crypt encrypts files before uploading, ensuring only authorized users can access them.</p>
-            </div>
-            <div class="card">
-                <h3>🚀 Ease of Use</h3>
-                <p>The extension seamlessly integrates with Google Drive, allowing users to encrypt and decrypt files with a single click.</p>
-            </div>
-            <div class="card">
-                <h3>🔄 No Third-Party Access</h3>
-                <p>Unlike traditional cloud security solutions, Cloud Crypt operates **locally**, ensuring encryption keys remain private.</p>
-            </div>
-        </div>
-    </section>
+        <button class="learn-more">Learn More</button>
+    </div>
 
-    <!-- Methodology Section -->
-    <section id="methodology">
-        <h2>⚙️ How It Works?</h2>
-        <div class="steps">
-            <div class="step">
-                <h3>1️⃣ Encryption</h3>
-                <p>The selected files are encrypted using **AES-256** before being uploaded to the cloud.</p>
-            </div>
-            <div class="step">
-                <h3>2️⃣ Secure Upload</h3>
-                <p>The encrypted files are stored safely in **Google Drive** without exposing any data.</p>
-            </div>
-            <div class="step">
-                <h3>3️⃣ Decryption</h3>
-                <p>Users can decrypt and retrieve their files anytime using their private password.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Team Section -->
-    <section id="team">
-        <h2>👨‍💻 Meet the Developers</h2>
-        <div class="grid">
-            <div class="card dev">
-                <h3>Karthikeyan N</h3>
-                <p>Lead Developer | Security Researcher</p>
-            </div>
-            <div class="card dev">
-                <h3>Mohamed Hashif H</h3>
-                <p>Backend & Cloud Integration</p>
-            </div>
-            <div class="card dev">
-                <h3>Santhosh M</h3>
-                <p>UI/UX & API Development</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <p>© 2025 Cloud Crypt | A Project by University Students</p>
-    </footer>
-
-    <script>
-        document.getElementById("darkModeToggle").addEventListener("click", function () {
-            document.body.classList.toggle("dark-mode");
-        });
-    </script>
-<script src="script.js"></script>
-
+    <script src="script.js"></script>
 </body>
 </html>
