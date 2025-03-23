@@ -1,45 +1,124 @@
-document.addEventListener("DOMContentLoaded", () => {
-    const hero = document.querySelector(".hero");
-    const cards = document.querySelectorAll(".card");
-    const steps = document.querySelectorAll(".step");
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
 
-    // Mousemove Effect on Hero Section
-    hero.addEventListener("mousemove", (e) => {
-        let moveX = (e.clientX / window.innerWidth) * 40 - 20;
-        let moveY = (e.clientY / window.innerHeight) * 40 - 20;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
 
-        hero.style.transform = `translate(${moveX}px, ${moveY}px)`;
-    });
+body {
+    background: radial-gradient(circle, #141e30, #243b55);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+}
 
-    // Card Hover Animation (Moves in Cursor Direction)
-    cards.forEach(card => {
-        card.addEventListener("mousemove", (e) => {
-            let moveX = (e.clientX / window.innerWidth) * 10 - 5;
-            let moveY = (e.clientY / window.innerHeight) * 10 - 5;
+.container {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
+    transition: transform 0.3s ease-in-out;
+}
 
-            card.style.transform = `translate(${moveX}px, ${moveY}px) scale(1.1)`;
-            card.style.boxShadow = "0 12px 30px rgba(255, 255, 255, 0.3)";
-        });
+.container:hover {
+    transform: scale(1.02);
+}
 
-        card.addEventListener("mouseleave", () => {
-            card.style.transform = "translate(0, 0) scale(1)";
-            card.style.boxShadow = "0 4px 8px rgba(0, 0, 0, 0.2)";
-        });
-    });
+.title {
+    font-size: 36px;
+    font-weight: bold;
+    animation: fadeIn 1s ease-in-out;
+}
 
-    // Step Hover Effect (Rotates Slightly)
-    steps.forEach(step => {
-        step.addEventListener("mousemove", () => {
-            step.style.transform = "rotate(-5deg) scale(1.1)";
-        });
+.subheading {
+    font-size: 18px;
+    margin-bottom: 15px;
+    opacity: 0.9;
+}
 
-        step.addEventListener("mouseleave", () => {
-            step.style.transform = "rotate(0) scale(1)";
-        });
-    });
+.content {
+    font-size: 16px;
+    text-align: left;
+    margin-top: 10px;
+    line-height: 1.6;
+    animation: slideIn 1s ease-in-out;
+}
 
-    // Dark Mode Toggle
-    document.getElementById("darkModeToggle").addEventListener("click", function () {
-        document.body.classList.toggle("dark-mode");
-    });
-});
+.methodology {
+    margin-top: 20px;
+    padding: 15px;
+    border-radius: 10px;
+    background: rgba(0, 0, 0, 0.3);
+}
+
+.methodology h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.methodology ul {
+    list-style-type: none;
+    text-align: left;
+}
+
+.methodology li {
+    padding: 8px 0;
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+}
+
+.methodology li::before {
+    content: "✔";
+    margin-right: 10px;
+    color: #00ff99;
+}
+
+.learn-more {
+    margin-top: 20px;
+    padding: 12px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    background: linear-gradient(135deg, #00c6ff, #0072ff);
+    color: white;
+    transition: 0.3s ease-in-out;
+}
+
+.learn-more:hover {
+    background: linear-gradient(135deg, #0072ff, #00c6ff);
+    transform: translateY(-3px);
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideIn {
+    from { opacity: 0; transform: translateX(-30px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+/* Mouse-following animation */
+body::before {
+    content: "";
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    pointer-events: none;
+    transition: transform 0.1s ease-out;
+}
