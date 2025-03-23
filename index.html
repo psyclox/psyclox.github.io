@@ -3,31 +3,59 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cloud Crypt - Secure File Encryption</title>
+    <title>Cloud Crypt - Advanced File Encryption</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <div class="cursor-effect"></div> <!-- Cursor animation -->
+    
     <div class="container">
         <h1 class="title">🔐 Cloud Crypt</h1>
-        <p class="subheading">Advanced File Encryption & Security</p>
+        <p class="subheading">Powerful Client-Side File Encryption for Cloud Storage</p>
 
         <div class="content">
-            <p><b>Developed by:</b> Karthikeyan N, Mohamed Hashif H, Santosh M</p>
-            <p><b>Purpose:</b> Cloud Crypt is an encryption tool that protects your files before uploading them to cloud storage. Using AES-256 encryption, it ensures your data remains safe even in case of a cloud breach.</p>
-        </div>
+            <h2>🚀 About Cloud Crypt</h2>
+            <p>Cloud Crypt is a **zero-knowledge encryption tool** designed to **encrypt files before uploading** them to cloud storage. It ensures that even if the cloud provider is compromised, your data remains protected.</p>
 
-        <div class="methodology">
-            <h2>🔍 How It Works</h2>
-            <ul>
-                <li>✨ Select a file for encryption</li>
-                <li>🔑 Enter a secure password</li>
-                <li>🔐 File is encrypted before cloud upload</li>
-                <li>☁️ Upload securely to Google Drive</li>
-                <li>🔓 Download and decrypt anytime</li>
+            <h2>🛠️ Key Features</h2>
+            <ul class="features">
+                <li>🔒 AES-256 Encryption with **PBKDF2 key derivation**</li>
+                <li>☁️ Secure upload to **Google Drive**</li>
+                <li>🧑‍💻 Local client-side encryption (no server storage)</li>
+                <li>📜 Drag-and-drop file support</li>
+                <li>⚡ Optimized for fast encryption & decryption</li>
+                <li>🎨 Interactive UI with smooth animations</li>
             </ul>
         </div>
 
-        <button class="learn-more">Learn More</button>
+        <div class="methodology">
+            <h2>🔍 How Cloud Crypt Works</h2>
+            <div class="steps">
+                <div class="step">
+                    <h3>1️⃣ File Selection</h3>
+                    <p>Users select the files they want to encrypt.</p>
+                </div>
+                <div class="step">
+                    <h3>2️⃣ Password-Based Encryption</h3>
+                    <p>PBKDF2 derives a **secure AES-256 key** from a user-supplied password.</p>
+                </div>
+                <div class="step">
+                    <h3>3️⃣ Secure File Upload</h3>
+                    <p>The encrypted file is uploaded to **Google Drive** via API.</p>
+                </div>
+                <div class="step">
+                    <h3>4️⃣ Decryption on Download</h3>
+                    <p>Users retrieve files & decrypt them using the original password.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="dev-info">
+            <h2>👨‍💻 Developed By</h2>
+            <p><b>Karthikeyan N</b> | <b>Mohamed Hashif H</b> | <b>Santosh M</b></p>
+        </div>
+
+        <button class="learn-more">More Details</button>
     </div>
 
     <script src="script.js"></script>
