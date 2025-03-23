@@ -1,7 +1,7 @@
-// Cursor Effect
+// Cursor Effect (Moves Background)
 document.addEventListener("mousemove", (e) => {
-    const cursorEffect = document.querySelector(".cursor-effect");
-    cursorEffect.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`;
+    document.body.style.setProperty('--mouseX', `${e.clientX}px`);
+    document.body.style.setProperty('--mouseY', `${e.clientY}px`);
 });
 
 // Typewriter Effect for Title
@@ -16,20 +16,27 @@ function typeWriter() {
 }
 typeWriter();
 
-// Fade-in Effect
-document.addEventListener("DOMContentLoaded", () => {
-    document.querySelectorAll(".fade-in").forEach((element) => {
-        element.style.opacity = "1";
-        element.style.transform = "translateY(0)";
-    });
-});
-
 // Password Strength Checker
 document.getElementById("passwordInput").addEventListener("input", function () {
     const strengthBar = document.getElementById("passwordStrengthBar");
     const strengthText = document.getElementById("strengthText");
-    const strength = this.value.length;
+    const password = this.value;
+    let strength = 0;
 
-    strengthBar.style.width = `${strength * 10}%`;
-    strengthText.innerText = strength > 8 ? "Strong 🔥" : "Weak ⚠️";
+    if (password.length >= 8) strength++;
+    if (/[A-Z]/.test(password)) strength++;
+    if (/[a-z]/.test(password)) strength++;
+    if (/\d/.test(password)) strength++;
+    if (/[@$!%*?&]/.test(password)) strength++;
+
+    if (strength === 1 || strength === 2) {
+        strengthBar.style.backgroundColor = "red";
+        strengthText.innerText = "Weak ❌";
+    } else if (strength === 3) {
+        strengthBar.style.backgroundColor = "orange";
+        strengthText.innerText = "Medium ⚠️";
+    } else if (strength >= 4) {
+        strengthBar.style.backgroundColor = "green";
+        strengthText.innerText = "Strong ✅";
+    }
 });
