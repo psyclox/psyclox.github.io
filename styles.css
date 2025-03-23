@@ -31,7 +31,6 @@ body {
 .title {
     font-size: 36px;
     font-weight: bold;
-    animation: fadeIn 1s ease-in-out;
 }
 
 .subheading {
@@ -40,11 +39,10 @@ body {
     opacity: 0.9;
 }
 
-/* Features & Methodology */
+/* Features */
 .features {
     list-style: none;
     text-align: left;
-    margin-top: 10px;
     font-size: 16px;
 }
 
@@ -82,9 +80,15 @@ body {
     background: rgba(0, 0, 0, 0.4);
 }
 
-.dev-info {
+.password-checker {
     margin-top: 20px;
-    font-size: 16px;
+}
+
+#passwordStrengthBar {
+    height: 10px;
+    width: 100%;
+    background: #ccc;
+    border-radius: 5px;
 }
 
 .learn-more {
@@ -105,20 +109,19 @@ body {
     transform: translateY(-3px);
 }
 
-/* Cursor Effect */
-.cursor-effect {
-    position: absolute;
-    width: 15px;
-    height: 15px;
-    background: white;
-    border-radius: 50%;
-    pointer-events: none;
-    mix-blend-mode: difference;
-    transition: transform 0.1s ease-out;
+/* Animations */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
 }
 
-/* Animations */
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(-20px); }
-    to { opacity: 1; transform: translateY(0); }
+.pulse {
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
 }
