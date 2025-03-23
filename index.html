@@ -10,14 +10,14 @@
     <div class="cursor-effect"></div> <!-- Cursor animation -->
     
     <div class="container">
-        <h1 class="title">🔐 Cloud Crypt</h1>
-        <p class="subheading">Powerful Client-Side File Encryption for Cloud Storage</p>
+        <h1 class="title" id="typewriter"></h1>
+        <p class="subheading fade-in">Powerful Client-Side File Encryption for Cloud Storage</p>
 
         <div class="content">
-            <h2>🚀 About Cloud Crypt</h2>
+            <h2 class="fade-in">🚀 About Cloud Crypt</h2>
             <p>Cloud Crypt is a **zero-knowledge encryption tool** designed to **encrypt files before uploading** them to cloud storage. It ensures that even if the cloud provider is compromised, your data remains protected.</p>
 
-            <h2>🛠️ Key Features</h2>
+            <h2 class="fade-in">🛠️ Key Features</h2>
             <ul class="features">
                 <li>🔒 AES-256 Encryption with **PBKDF2 key derivation**</li>
                 <li>☁️ Secure upload to **Google Drive**</li>
@@ -29,21 +29,21 @@
         </div>
 
         <div class="methodology">
-            <h2>🔍 How Cloud Crypt Works</h2>
+            <h2 class="fade-in">🔍 How Cloud Crypt Works</h2>
             <div class="steps">
-                <div class="step">
+                <div class="step scale-on-hover">
                     <h3>1️⃣ File Selection</h3>
                     <p>Users select the files they want to encrypt.</p>
                 </div>
-                <div class="step">
+                <div class="step scale-on-hover">
                     <h3>2️⃣ Password-Based Encryption</h3>
                     <p>PBKDF2 derives a **secure AES-256 key** from a user-supplied password.</p>
                 </div>
-                <div class="step">
+                <div class="step scale-on-hover">
                     <h3>3️⃣ Secure File Upload</h3>
                     <p>The encrypted file is uploaded to **Google Drive** via API.</p>
                 </div>
-                <div class="step">
+                <div class="step scale-on-hover">
                     <h3>4️⃣ Decryption on Download</h3>
                     <p>Users retrieve files & decrypt them using the original password.</p>
                 </div>
@@ -51,11 +51,18 @@
         </div>
 
         <div class="dev-info">
-            <h2>👨‍💻 Developed By</h2>
+            <h2 class="fade-in">👨‍💻 Developed By</h2>
             <p><b>Karthikeyan N</b> | <b>Mohamed Hashif H</b> | <b>Santosh M</b></p>
         </div>
 
-        <button class="learn-more">More Details</button>
+        <div class="password-checker">
+            <h2 class="fade-in">🔑 Test Password Strength</h2>
+            <input type="password" id="passwordInput" placeholder="Enter a password">
+            <div id="passwordStrengthBar"></div>
+            <p id="strengthText"></p>
+        </div>
+
+        <button class="learn-more pulse">More Details</button>
     </div>
 
     <script src="script.js"></script>
